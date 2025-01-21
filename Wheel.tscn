@@ -1,0 +1,264 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqf6c75ny01br"]
+
+[ext_resource type="Script" path="res://the-wheel-godot-CSharp/Wheel.cs" id="1_jhi4n"]
+[ext_resource type="Texture2D" uid="uid://bgsngvx2gvemu" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/slice1.png" id="2_hsk3b"]
+[ext_resource type="Texture2D" uid="uid://do6nve628fj42" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/slice2.png" id="3_skicg"]
+[ext_resource type="Texture2D" uid="uid://mcjmi4bhyyfd" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/slice3.png" id="4_d5qtb"]
+[ext_resource type="Texture2D" uid="uid://c58kxglsbrtpy" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/slice4.png" id="5_wshae"]
+[ext_resource type="Texture2D" uid="uid://c7f57bkxn7noc" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/underlay.png" id="6_hwong"]
+[ext_resource type="Texture2D" uid="uid://742pxiqvrtvv" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/overlay.png" id="7_j5a0j"]
+[ext_resource type="Texture2D" uid="uid://vykvlqf1dvc4" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/selector.png" id="8_3lu24"]
+
+[node name="Wheel" type="Control"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -852.0
+offset_bottom = -348.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jhi4n")
+sliceTextures = [ExtResource("2_hsk3b"), ExtResource("3_skicg"), ExtResource("4_d5qtb"), ExtResource("5_wshae")]
+
+[node name="sliceGimbal" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="slice1" type="TextureRect" parent="sliceGimbal"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("2_hsk3b")
+
+[node name="slice2" type="TextureRect" parent="sliceGimbal"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("3_skicg")
+
+[node name="slice3" type="TextureRect" parent="sliceGimbal"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 4.71239
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("4_d5qtb")
+
+[node name="slice4" type="TextureRect" parent="sliceGimbal"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("5_wshae")
+
+[node name="underlay" type="TextureRect" parent="sliceGimbal"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("6_hwong")
+
+[node name="wheel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="overlay" type="TextureRect" parent="wheel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("7_j5a0j")
+
+[node name="covers" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cover1" type="TextureRect" parent="covers"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 0.658824)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("5_wshae")
+
+[node name="cover2" type="TextureRect" parent="covers"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 0.658824)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("5_wshae")
+
+[node name="cover3" type="TextureRect" parent="covers"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 0.658824)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("5_wshae")
+
+[node name="cover4" type="TextureRect" parent="covers"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 0.658824)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 4.71239
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("5_wshae")
+
+[node name="selector" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("8_3lu24")
