@@ -49,9 +49,9 @@ public partial class Demo : Control
 		string slice = new string("Slice Value: "+wheel._currentValue.sliceValue.ToString());
 		string basev = new string("Base Value: "+wheel._currentValue.baseValue.ToString());
 		string selections = new string("Number of Selections: "+wheel.numSelections.ToString());
-		string bases = new string("Base Values: "+wheel.baseNumbers.ToString());
-		string valueMappings = new string("Value Mappings: "+wheel.currentValueMappings.ToString());
-		string sliceMultipliers = new string("Slice Multipliers: "+wheel.sliceValues.ToString());
+		string bases = new string("Base Values: "+ string.Join(",", wheel.baseNumbers));
+		string valueMappings = new string("Value Mappings: "+string.Join(",", wheel.currentValueMappings));
+		string sliceMultipliers = new string("Slice Multipliers: "+string.Join(",", wheel.sliceValues));
 		GetNode<Label>("text/wheelValue").Text = "Wheel Value: "+currentWheelValue.ToString();
 		GetNode<Label>("text/sliceValue").Text = slice;
 		GetNode<Label>("text/baseValue").Text = basev;
