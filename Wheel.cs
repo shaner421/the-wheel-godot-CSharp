@@ -57,16 +57,16 @@ public partial class Wheel : Control
 	TextureRect selector;
 	Control sliceGimbal;
 	
-	int[] baseNumbers = new int[4]{-2,-1,1,2}; // base score values for the slices
-	int[] sliceValues = new int[4]{1,2,3,4}; // slice value multiplier
-	int[] currentValueMappings = new int[4]{0,90,180,270}; // assigns values to directions; format is [UP,RIGHT,DOWN,LEFT]
+	public int[] baseNumbers = new int[4]{-2,-1,1,2}; // base score values for the slices
+	public int[] sliceValues = new int[4]{1,2,3,4}; // slice value multiplier
+	public int[] currentValueMappings = new int[4]{0,90,180,270}; // assigns values to directions; format is [UP,RIGHT,DOWN,LEFT]
 	enum WheelState {AWAITING_SELECTION,ROTATING,NO_INPUT};
 	WheelState _state = WheelState.AWAITING_SELECTION;
-	int numSelections = 0;
-	WheelPayload _currentValue;
+	public int numSelections = 0;
+	public WheelPayload _currentValue;
 	int currentDirection = 0;
 	int[] directions = new int[4]{0,90,180,270};
-	int targetSelections = 4;
+	public int targetSelections = 4;
 
 	public override void _Ready(){
 		// initialize onready variables

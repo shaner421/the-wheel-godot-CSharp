@@ -1,14 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8fw43252kktl"]
+[gd_scene load_steps=9 format=3 uid="uid://b8fw43252kktl"]
 
 [ext_resource type="Texture2D" uid="uid://1cl1src28wao" path="res://the-wheel-godot-CSharp/Demo/Assets/2.png" id="1_ip4b4"]
+[ext_resource type="Script" path="res://the-wheel-godot-CSharp/Demo/Scenes/Demo.cs" id="1_tstdk"]
 [ext_resource type="Texture2D" uid="uid://l77pyommmo3y" path="res://the-wheel-godot-CSharp/Demo/Assets/1.png" id="2_n7a7v"]
 [ext_resource type="Texture2D" uid="uid://d01rvjco1og2l" path="res://the-wheel-godot-CSharp/Demo/Assets/-1.png" id="3_ge3o5"]
 [ext_resource type="Texture2D" uid="uid://bm4k7jllmeuqs" path="res://the-wheel-godot-CSharp/Demo/Assets/-2.png" id="4_fs23v"]
 [ext_resource type="PackedScene" uid="uid://bqf6c75ny01br" path="res://the-wheel-godot-CSharp/Wheel.tscn" id="5_d3amt"]
-[ext_resource type="Texture2D" uid="uid://bgsngvx2gvemu" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/slice1.png" id="6_1xqkk"]
-[ext_resource type="Texture2D" uid="uid://do6nve628fj42" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/slice2.png" id="7_5nmjh"]
-[ext_resource type="Texture2D" uid="uid://mcjmi4bhyyfd" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/slice3.png" id="8_hdr5c"]
-[ext_resource type="Texture2D" uid="uid://c58kxglsbrtpy" path="res://the-wheel-godot-CSharp/Assets/wheel-simple/slice4.png" id="9_arskj"]
 [ext_resource type="Texture2D" uid="uid://dblq8a5cs8ckf" path="res://the-wheel-godot-CSharp/Demo/Assets/pass.jpg" id="10_www5m"]
 [ext_resource type="Texture2D" uid="uid://bgpcoe8bbgxfs" path="res://the-wheel-godot-CSharp/Demo/Assets/fail.jpg" id="11_akmjg"]
 
@@ -19,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tstdk")
 
 [node name="bg" type="ColorRect" parent="."]
 layout_mode = 1
@@ -172,7 +170,6 @@ expand_mode = 1
 
 [node name="Wheel" parent="." instance=ExtResource("5_d3amt")]
 layout_mode = 1
-sliceTextures = [ExtResource("6_1xqkk"), ExtResource("7_5nmjh"), ExtResource("8_hdr5c"), ExtResource("9_arskj")]
 
 [node name="text" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(250, 0)
@@ -229,10 +226,12 @@ text = "slice map
 
 [node name="debugCheckbox" type="CheckBox" parent="text"]
 layout_mode = 2
+focus_mode = 0
 text = "Show Debug Stats"
 
 [node name="musicCheckbox" type="CheckBox" parent="text"]
 layout_mode = 2
+focus_mode = 0
 button_pressed = true
 text = "Background Music"
 
@@ -378,3 +377,6 @@ grow_vertical = 2
 pivot_offset = Vector2(225, 200)
 texture = ExtResource("11_akmjg")
 expand_mode = 1
+
+[connection signal="toggled" from="text/debugCheckbox" to="." method="_on_debug_checkbox_toggled"]
+[connection signal="toggled" from="text/musicCheckbox" to="." method="_on_music_checkbox_toggled"]
