@@ -20,7 +20,6 @@ offset_bottom = -348.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jhi4n")
-sliceTextures = [ExtResource("2_hsk3b"), ExtResource("3_skicg"), ExtResource("4_d5qtb"), ExtResource("5_wshae")]
 
 [node name="sliceGimbal" type="Control" parent="."]
 unique_name_in_owner = true
@@ -47,6 +46,7 @@ offset_right = 128.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 3.14159
 pivot_offset = Vector2(128, 128)
 texture = ExtResource("2_hsk3b")
 
@@ -64,7 +64,7 @@ offset_right = 128.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 3.14159
+rotation = 1.5708
 pivot_offset = Vector2(128, 128)
 texture = ExtResource("3_skicg")
 
@@ -82,7 +82,6 @@ offset_right = 128.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 1.5708
 pivot_offset = Vector2(128, 128)
 texture = ExtResource("4_d5qtb")
 

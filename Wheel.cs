@@ -2,7 +2,6 @@ using Godot;
 using System;
 using System.Collections.Generic;  
 
-
 // Hello and welcome to the Persuasion Wheel Game Jam AKA WHEELJAM! This code is
 // free to use and distribute for the purposes of WHEELJAM and any games you choose
 // to make with it outside of wheeljam as well. Please provide attribution if you 
@@ -61,7 +60,12 @@ public partial class Wheel : Control
 	float animTime = 0.3f;
 	[ExportGroup("Textures")]
 	[Export]
-	Texture2D[] sliceTextures; // array of slice textures. Defaults to the simple ones.
+	Texture2D[] sliceTextures = new Texture2D[4]{ // array of slice textures. Defaults to the simple ones.
+		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice1.png"),
+		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice2.png"),
+		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice3.png"),
+		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice4.png")
+		}; 
 	[Export]
 	Texture2D underlayTexture = GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/underlay.png"); // our underlay texture.
 	[Export]
@@ -90,12 +94,6 @@ public partial class Wheel : Control
 	// called when the scene is loaded into the tree.
 	public override void _Ready(){
 		// initialize onready variables
-		sliceTextures = new Texture2D[4]{
-		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice1.png"),
-		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice2.png"),
-		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice3.png"),
-		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice4.png")
-		};
 		slices = new TextureRect[4]{GetNode<TextureRect>("%slice1"),GetNode<TextureRect>("%slice2"),GetNode<TextureRect>("%slice3"),GetNode<TextureRect>("%slice4")};
 		covers = new TextureRect[4]{GetNode<TextureRect>("%cover1"),GetNode<TextureRect>("%cover2"),GetNode<TextureRect>("%cover3"),GetNode<TextureRect>("%cover4")};
 		overlay = GetNode<TextureRect>("%overlay");
@@ -221,12 +219,10 @@ public partial class Wheel : Control
 		numberMap.Add(a[1],baseNumbers[1]);
 		numberMap.Add(a[2],baseNumbers[2]);
 		numberMap.Add(a[3],baseNumbers[3]);
-		
 		for(int x=0;x<a.Length;x++){
 			a[x]+=90; // +90 degrees to each value mapping
 			if((int)a[x] == 360){a[x]=0;} // wrap back around to 0 if 360
 			baseNumbers[x] = numberMap[a[x]]; // make sure our base numbers stay the same
-		
 		}
 	}
 	// this is all UI updating stuff. 
