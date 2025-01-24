@@ -99,6 +99,8 @@ public partial class Demo : Control
 		bgMsc.PitchScale = 1.02f;
 		bgMsc.VolumeDb = -30;
 		bgMsc.Play();
+		// for this section I just set the goofy tune to loop in the import settings
+		// rather than connecting the signal and awaiting. I got lazy. Sorry!
 	}
 	void _on_music_checkbox_toggled(bool toggled_on){
 		if(toggled_on){
