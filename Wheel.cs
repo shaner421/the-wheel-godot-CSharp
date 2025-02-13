@@ -61,17 +61,17 @@ public partial class Wheel : Control
 	[ExportGroup("Textures")]
 	[Export]
 	Texture2D[] sliceTextures = new Texture2D[4]{ // array of slice textures. Defaults to the simple ones.
-		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice1.png"),
-		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice2.png"),
-		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice3.png"),
-		GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/slice4.png")
+		GD.Load<Texture2D>("uid://d26cocb7f5biu"),
+		GD.Load<Texture2D>("uid://b26d46otswkev"),
+		GD.Load<Texture2D>("uid://b62c2x3fpqy2g"),
+		GD.Load<Texture2D>("uid://cibvjji04v87m")
 		}; 
 	[Export]
-	Texture2D underlayTexture = GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/underlay.png"); // our underlay texture.
+	Texture2D underlayTexture = GD.Load<Texture2D>("uid://dq2c0cj6havec"); // our underlay texture.
 	[Export]
-	Texture2D overlayTexture = GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/overlay.png"); // our overlay texture.
+	Texture2D overlayTexture = GD.Load<Texture2D>("uid://cqsjo7cxeno47"); // our overlay texture.
 	[Export]
-	Texture2D selectorTexture = GD.Load<Texture2D>("res://the-wheel-godot-CSharp/Assets/wheel-simple/selector.png"); // our selector texture.
+	Texture2D selectorTexture = GD.Load<Texture2D>("uid://bj1ti43o3pgnc"); // our selector texture.
 	
 	TextureRect[] slices; // an array of our slice nodes.
 	TextureRect[] covers; // an array of our cover nodes.

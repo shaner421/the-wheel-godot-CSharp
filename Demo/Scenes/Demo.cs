@@ -5,11 +5,11 @@ public partial class Demo : Control
 {
 	
 	Wheel wheel;
-	AudioStream backgroundMusic = GD.Load<AudioStream>("res://the-wheel-godot-CSharp/Demo/Assets/goofy_tune.wav");
-	AudioStream selectSound = GD.Load<AudioStream>("res://the-wheel-godot-CSharp/Demo/Assets/selector_click.wav");
-	AudioStream rotateSound = GD.Load<AudioStream>("res://the-wheel-godot-CSharp/Demo/Assets/rotate.wav");
-	AudioStream successSound = GD.Load<AudioStream>("res://the-wheel-godot-CSharp/Demo/Assets/success.wav");
-	AudioStream failSound = GD.Load<AudioStream>("res://the-wheel-godot-CSharp/Demo/Assets/fail.mp3");
+	AudioStream backgroundMusic = GD.Load<AudioStream>("uid://0g3hbfl4uosc");
+	AudioStream selectSound = GD.Load<AudioStream>("uid://cxg4q58es2u77");
+	AudioStream rotateSound = GD.Load<AudioStream>("uid://c43qhby2kqxxj");
+	AudioStream successSound = GD.Load<AudioStream>("uid://bd4rwxqynrent");
+	AudioStream failSound = GD.Load<AudioStream>("uid://pcg4xnx3rd1t");
 	int currentWheelValue = 0;
 	AudioStreamPlayer bgMsc;
 	bool gameOver = false;
